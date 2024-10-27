@@ -20,8 +20,8 @@ jobs:
 
       - name: Install Android SDK
         run: |
-          sudo apt-get update
-          sudo apt-get install -y wget unzip
+          apt-get update
+          apt-get install -y wget unzip
           wget https://dl.google.com/android/repository/commandlinetools-linux-7583922_latest.zip
           mkdir -p $ANDROID_HOME/cmdline-tools
           unzip -q commandlinetools-linux-7583922_latest.zip -d $ANDROID_HOME/cmdline-tools
@@ -61,5 +61,6 @@ jobs:
         with:
           name: package
           path: ${{ steps.buildozer.outputs.filename }}
+
 
 
